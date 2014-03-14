@@ -16,14 +16,16 @@
 
 - (void)viewDidLoad
 {
+    _items = [NSMutableArray arrayWithObjects:@"A", @"B", nil];
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSArray *tabBarItems = self.tabBarController.tabBar.items;
+    self.tabBarController.selectedIndex = 2;
+    UITabBarItem *tab = [tabBarItems objectAtIndex:2];
+    tab.badgeValue = @"3";
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 @end
