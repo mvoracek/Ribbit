@@ -21,6 +21,11 @@
 		C913524C18C8D7FB0032F8E5 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C913524B18C8D7FB0032F8E5 /* SignUpViewController.m */; };
 		C913524F18CA1FC90032F8E5 /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C913524E18CA1FC90032F8E5 /* EditFriendsViewController.m */; };
 		C913525218CA347D0032F8E5 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C913525118CA347D0032F8E5 /* FriendsViewController.m */; };
+		C92290D818D8CB98001CA299 /* icon_image.png in Resources */ = {isa = PBXBuildFile; fileRef = C92290D418D8CB98001CA299 /* icon_image.png */; };
+		C92290D918D8CB98001CA299 /* icon_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C92290D518D8CB98001CA299 /* icon_image@2x.png */; };
+		C92290DA18D8CB98001CA299 /* icon_video.png in Resources */ = {isa = PBXBuildFile; fileRef = C92290D618D8CB98001CA299 /* icon_video.png */; };
+		C92290DB18D8CB98001CA299 /* icon_video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C92290D718D8CB98001CA299 /* icon_video@2x.png */; };
+		C92290DE18D8CF67001CA299 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92290DD18D8CF67001CA299 /* ImageViewController.m */; };
 		C960E43218C4F7DF00183232 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C960E43118C4F7DF00183232 /* Foundation.framework */; };
 		C960E43418C4F7DF00183232 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C960E43318C4F7DF00183232 /* CoreGraphics.framework */; };
 		C960E43618C4F7DF00183232 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C960E43518C4F7DF00183232 /* UIKit.framework */; };
@@ -74,6 +79,12 @@
 		C913524E18CA1FC90032F8E5 /* EditFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsViewController.m; sourceTree = "<group>"; };
 		C913525018CA347D0032F8E5 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		C913525118CA347D0032F8E5 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		C92290D418D8CB98001CA299 /* icon_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_image.png; sourceTree = "<group>"; };
+		C92290D518D8CB98001CA299 /* icon_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_image@2x.png"; sourceTree = "<group>"; };
+		C92290D618D8CB98001CA299 /* icon_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_video.png; sourceTree = "<group>"; };
+		C92290D718D8CB98001CA299 /* icon_video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_video@2x.png"; sourceTree = "<group>"; };
+		C92290DC18D8CF67001CA299 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		C92290DD18D8CF67001CA299 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		C960E42E18C4F7DF00183232 /* Ribbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ribbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C960E43118C4F7DF00183232 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C960E43318C4F7DF00183232 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -188,6 +199,8 @@
 				C960E44318C4F7DF00183232 /* Main.storyboard */,
 				C960E47318C7BFDA00183232 /* InboxViewController.h */,
 				C960E47418C7BFDA00183232 /* InboxViewController.m */,
+				C92290DC18D8CF67001CA299 /* ImageViewController.h */,
+				C92290DD18D8CF67001CA299 /* ImageViewController.m */,
 				C913524718C8D7DA0032F8E5 /* LoginViewController.h */,
 				C913524818C8D7DA0032F8E5 /* LoginViewController.m */,
 				C913524A18C8D7FB0032F8E5 /* SignUpViewController.h */,
@@ -238,6 +251,10 @@
 		C960E47218C7B51D00183232 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C92290D418D8CB98001CA299 /* icon_image.png */,
+				C92290D518D8CB98001CA299 /* icon_image@2x.png */,
+				C92290D618D8CB98001CA299 /* icon_video.png */,
+				C92290D718D8CB98001CA299 /* icon_video@2x.png */,
 				C960E46B18C7B4F900183232 /* inbox@2x.png */,
 				C960E46618C7B4F900183232 /* camera.png */,
 				C960E46718C7B4F900183232 /* friends.png */,
@@ -324,15 +341,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C92290DA18D8CB98001CA299 /* icon_video.png in Resources */,
 				C960E44A18C4F7DF00183232 /* Images.xcassets in Resources */,
 				C960E43C18C4F7DF00183232 /* InfoPlist.strings in Resources */,
+				C92290D818D8CB98001CA299 /* icon_image.png in Resources */,
 				C960E46E18C7B4F900183232 /* inbox.png in Resources */,
 				C960E46D18C7B4F900183232 /* friends.png in Resources */,
 				C960E46F18C7B4F900183232 /* camera@2x.png in Resources */,
 				C960E46C18C7B4F900183232 /* camera.png in Resources */,
+				C92290D918D8CB98001CA299 /* icon_image@2x.png in Resources */,
 				C960E47018C7B4F900183232 /* friends@2x.png in Resources */,
 				C960E44518C4F7DF00183232 /* Main.storyboard in Resources */,
 				C960E47118C7B4F900183232 /* inbox@2x.png in Resources */,
+				C92290DB18D8CB98001CA299 /* icon_video@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C92290DE18D8CF67001CA299 /* ImageViewController.m in Sources */,
 				C960E44818C4F7DF00183232 /* ViewController.m in Sources */,
 				C960E44218C4F7DF00183232 /* AppDelegate.m in Sources */,
 				C913524C18C8D7FB0032F8E5 /* SignUpViewController.m in Sources */,

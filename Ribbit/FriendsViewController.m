@@ -19,20 +19,26 @@
 {
     [super viewDidLoad];
     self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
     PFQuery *query = [self.friendsRelation query];
     [query orderByAscending:@"username"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-    {
-        if (error)
-        {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-        else
-        {
-            self.friends = objects;
-            [self.tableView reloadData];
-        }
-    }];
+     {
+         if (error)
+         {
+             NSLog(@"Error: %@ %@", error, [error userInfo]);
+         }
+         else
+         {
+             self.friends = objects;
+             [self.tableView reloadData];
+         }
+     }];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

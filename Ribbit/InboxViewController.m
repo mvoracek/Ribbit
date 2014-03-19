@@ -7,7 +7,7 @@
 //
 
 #import "InboxViewController.h"
-#import <Parse/Parse.h>
+#import "ImageViewController.h"
 
 @interface InboxViewController ()
 
@@ -34,21 +34,38 @@
     }
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
+    [query whereKey:@"recepientIds" equalTo:[[PFUser currentUser]objectId]];
+    [query orderByDescending:@"createdAt"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error)
+        {
+            
+        }
+        else
+        {
+            self.messages = objects;
+            [self.tableView reloadData];
+        }
+    }];
+    
+}
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [self.messages count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -56,9 +73,34 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    PFObject *message = [self.messages objectAtIndex: indexPath.row];
+    cell.textLabel.text = [message objectForKey:@"senderName"];
+    
+    NSString *fileType = [message objectForKey:@"fileType"];
+    if ([fileType isEqualToString:@"image"])
+    {
+        cell.imageView.image = [UIImage imageNamed:@"icon_image"];
+    }
+    else
+    {
+        cell.imageView.image = [UIImage imageNamed:@"icon_video"];
+    }
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedMessage = [self.messages objectAtIndex: indexPath.row];
+    NSString *fileType = [self.selectedMessage objectForKey:@"fileType"];
+    if ([fileType isEqualToString:@"image"])
+    {
+        [self performSegueWithIdentifier:@"showImage" sender:self];
+    }
+    else
+    {
+        
+    }
 }
 
 - (IBAction)logout:(id)sender
@@ -73,6 +115,12 @@
     if ([segue.identifier isEqualToString:@"showLogin"])
     {
         [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+    }
+    else if ([segue.identifier isEqualToString:@"showImage"])
+    {
+        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+        ImageViewController *imageViewController = (ImageViewController *)segue.destinationViewController;
+        imageViewController.message = self.selectedMessage;
     }
 }
 
